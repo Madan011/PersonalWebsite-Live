@@ -1,0 +1,22 @@
+.iconmenu {
+    height: 50px;
+    width: 50px;
+    color: #008080;
+    margin-top: 33px;    
+}
+
+.iconmenu:hover{
+    color: #035353;
+}
+
+.maintext {
+    color: #008080;
+}
+
+.NavdropActive {
+    display: block;
+}
+
+.NavdropInActive {
+    display: none;
+}
