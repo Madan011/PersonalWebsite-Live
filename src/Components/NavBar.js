@@ -16,7 +16,7 @@ const NavBar = () => {
     <> 
       <div className='flex min-h-fit bg-gray-300'>
         <div className='pl-11'><img src={logo} alt=""/></div>
-        <div className='relative ml-auto pr-11'>
+        <div className='relative ml-auto pr-6'>
           
 
           <button type='button' className='hover:select-auto' id='menu-button' onClick={ () => showMenu()}><CgMenuRound className='iconmenu'/>

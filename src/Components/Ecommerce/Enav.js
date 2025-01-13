@@ -27,7 +27,7 @@ const Enav = () => {
 
      <div className='flex min-h-fit bg-gray-200'>
 
-    <p className='animate-marquee overflow-x-hidden whitespace-nowrap'>This is the demo Ecommerce site. The items shown in this site is generated through free api and is for training and research purpose.</p>
+    <p className='animate-marquee whitespace-nowrap'>This is the demo Ecommerce site. The items shown in this site is generated through free api and is for training and research purpose.</p>
 
     </div>
      
