@@ -13,7 +13,7 @@ const Enav = () => {
 
         <div className='pl-11 pt-2'><img className='size-20' src={logo} alt=""/></div>        
 
-        <div className='relative ml-auto mt-6 mr-6'>
+        <div className='relative ml-auto mr-6'>
          
           <button type='button' className='hover:select-auto mr-6' id='menu-button'><LiaSearchSolid className='iconmenu'/></button>
 
@@ -25,9 +25,9 @@ const Enav = () => {
 
     </div>
 
-    <div className='flex min-h-fit bg-gray-200'>
+     <div className='flex min-h-fit bg-gray-200'>
 
-    <marquee behavior="scroll" direction="left">This is the demo Ecommerce site. The items shown in this site is generated through free api and is for training and research purpose.</marquee>
+    <p className='animate-marquee overflow-x-hidden whitespace-nowrap'>This is the demo Ecommerce site. The items shown in this site is generated through free api and is for training and research purpose.</p>
 
     </div>
      
