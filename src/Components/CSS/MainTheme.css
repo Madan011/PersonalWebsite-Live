@@ -1,0 +1,43 @@
+.iconmenu {
+    height: 50px;
+    width: 50px;
+<<<<<<< HEAD
+    color: #008080;        
+=======
+    color: #008080;
+    margin-top: 33px;    
+>>>>>>> deaccfbc987a9696f8e9b2eba751515406db4e6d
+}
+
+.iconmenu:hover{
+    color: #035353;
+}
+
+.maintext {
+    color: #008080;
+}
+
+.NavdropActive {
+    display: block;
+}
+
+.NavdropInActive {
+    display: none;
+}
+
+.mainlink {
+    color :#864e4e     
+}
+
+.mainlink:hover {
+    color :#52150afe  
+}
+
+.mainbutton {
+    background-color: #008080;
+    outline-color: #52150afe;
+}
+
+.mainbutton:hover {
+    background-color: #035353;
+}
