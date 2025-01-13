@@ -17,12 +17,10 @@ const NavBar = () => {
       <div className='flex min-h-fit bg-gray-300'>
         <div className='pl-11'><img src={logo} alt=""/></div>
         <div className='relative ml-auto pr-11'>
+          
 
-<<<<<<< HEAD
-          <button type='button' className='hover:select-auto mt-9' id='menu-button' onClick={ () => showMenu()}><CgMenuRound className='iconmenu'/>
-=======
           <button type='button' className='hover:select-auto' id='menu-button' onClick={ () => showMenu()}><CgMenuRound className='iconmenu'/>
->>>>>>> deaccfbc987a9696f8e9b2eba751515406db4e6d
+
           </button>
 
           <div className={`${isActive ? "NavdropActive" : "NavdropInActive"} `}>

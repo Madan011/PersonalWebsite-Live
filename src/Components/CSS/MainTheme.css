@@ -1,12 +1,9 @@
 .iconmenu {
     height: 50px;
     width: 50px;
-<<<<<<< HEAD
-    color: #008080;        
-=======
     color: #008080;
-    margin-top: 33px;    
->>>>>>> deaccfbc987a9696f8e9b2eba751515406db4e6d
+    color: #008080;
+    margin-top: 33px;
 }
 
 .iconmenu:hover{
