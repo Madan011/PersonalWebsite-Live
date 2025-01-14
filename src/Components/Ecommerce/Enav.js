@@ -1,35 +1,104 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../logo/Logo 804444 192.png'
 import '../CSS/MainTheme.css'
 import {IoMdLogOut} from 'react-icons/io'
 import {PiShoppingCartBold} from 'react-icons/pi'
 import { LiaSearchSolid } from "react-icons/lia"
+import {CgMenuRound} from 'react-icons/cg'
 import { Link } from 'react-router-dom'
 
 const Enav = () => {
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleSearchBar = () => {
+    setIsSearchBarOpen(!isSearchBarOpen);
+  };
+
   return (
     <>
-    <div className='flex min-h-fit bg-gray-300'>
 
-        <div className='pl-11 pt-2'><img className='size-20' src={logo} alt=""/></div>        
-
-        <div className='relative ml-auto mr-6'>
+      <nav className="bg-gray-300 p-4 shadow-md">
+        <div className="flex items-center justify-between max-w-screen-xl mx-auto">
          
-          <button type='button' className='hover:select-auto mr-6' id='menu-button'><LiaSearchSolid className='iconmenu'/></button>
+          {/* Logo / Brand */}
+          <div className="text-2xl font-bold">
+            <Link to="/">
+              <img src={logo} alt="Logo" className="h-14 w-auto" />
+            </Link>
+          </div>
 
-          <button type='button' className='hover:select-auto mr-6' id='menu-button'><PiShoppingCartBold className='iconmenu'/></button>
+          {/* Search Bar - Centered */}
+          <div className="hidden flex-grow md:flex justify-center">
+            <div className="flex items-center space-x-3">
+              <label htmlFor="search" className="sr-only">Search</label>
+              <input
+                id="search"
+                type="text"
+                placeholder="Search..."
+                className="p-2 w-96 rounded-xl bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-700"
+              />
+              <button className="p-2 rounded-xl font-semibold text-white mainbutton transition duration-200">
+                Search
+              </button>
+            </div>
+          </div>
 
-          <Link to='/signin'><button type='button' className='hover:select-auto' id='menu-button'><IoMdLogOut className='iconmenu'/></button></Link>         
+          {/* Desktop Navigation Links */}        
+          <div className="hidden md:flex ml-auto space-x-6 items-center absolute right-4">
+            <Link className="text-teal-700 hover:text-teal-500">
+              <PiShoppingCartBold className="iconmenu w-auto h-12" />
+            </Link>
+            <Link to="/signin" className="text-teal-700 hover:text-teal-500">
+              <IoMdLogOut className="iconmenu w-auto h-12" />
+            </Link>
+          </div>
+
+          {/* Mobile Menu Icon */}
+          <div className="md:hidden flex items-center space-x-4">
+            <button onClick={toggleSearchBar}><LiaSearchSolid className='iconmenu w-auto h-12'/></button>
+            <button onClick={toggleMobileMenu}><CgMenuRound className='iconmenu w-auto h-12'/></button>      
+          </div>
 
         </div>
 
-    </div>
+        {/* Mobile Navigation Links */}
+        {isSearchBarOpen && (
+                <div className="md:hidden mt-4 bg-gray-200 rounded-lg p-4">
+                  <div className="flex items-center space-x-3">
+                    <label htmlFor="mobile-search" className="sr-only">
+                      Mobile Search
+                    </label>
+                    <input
+                      id="mobile-search"
+                      type="text"
+                      placeholder="Search..."
+                      className="p-2 w-full rounded-xl bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-700"
+                    />
+                    <button className="p-2 rounded-xl font-semibold text-white mainbutton transition duration-200">
+                      Search
+                    </button>
+                  </div>
+                </div>
+              )}
 
-     <div className='flex min-h-fit bg-gray-200'>
+        {isMobileMenuOpen && (
+                    <div className="md:hidden mt-4 bg-gray-200 text-white rounded-lg p-4 space-y-4">
+                      <Link className="block maintext">Cart</Link>
+                      <Link to="/signin" className="block maintext">Log Out</Link>
+                    </div>
+                  )}
+      </nav>
 
-    <p className='animate-marquee whitespace-nowrap'>This is the demo Ecommerce site. The items shown in this site is generated through free api and is for training and research purpose.</p>
+      <div className='flex min-h-fit bg-gray-200'>
+          <p className='animate-marquee whitespace-nowrap'>This is the demo Ecommerce site. The items shown in this site is generated through free api and is for training and research purpose.</p>
+      </div>
 
-    </div>
      
       
     </>

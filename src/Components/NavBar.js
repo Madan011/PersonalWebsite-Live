@@ -4,37 +4,56 @@ import logo from './logo/Logo.svg'
 import {CgMenuRound} from 'react-icons/cg'
 import './CSS/MainTheme.css'
 
-const NavBar = () => {  
-  
-  const [isActive, setclass] = useState(false)
+const NavBar = () => { 
 
-  const showMenu = () => {
-      setclass(!isActive)
-  }
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <> 
-      <div className='flex min-h-fit bg-gray-300'>
-        <div className='pl-11'><img src={logo} alt=""/></div>
-        <div className='relative ml-auto pr-6'>
-          
 
-          <button type='button' className='hover:select-auto' id='menu-button' onClick={ () => showMenu()}><CgMenuRound className='iconmenu'/>
+      <nav className="bg-gray-300 p-4 shadow-md">
 
-          </button>
+          {/* Navbar Container */}
+          <div className="flex items-center justify-between max-w-screen-xl mx-auto">
 
-          <div className={`${isActive ? "NavdropActive" : "NavdropInActive"} `}>
-          <div className={'absolute right-6 w-56 rounded-md bg-gray-200 shadow-lg ring-1 ring-black/5 focus:outline-none'} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">         
-          <Link to="/signin" className="block px-4 py-2 text-sm maintext hover:bg-gray-300" role="menuitem" tabindex="-1" id="menu-item-0">Project Lookup</Link>
-          <Link to="/" className="block px-4 py-2 text-sm maintext hover:bg-gray-300" role="menuitem" tabindex="-1" id="menu-item-1">Home</Link>
-          <Link className="block px-4 py-2 text-sm maintext hover:bg-gray-300" role="menuitem" tabindex="-1" id="menu-item-1">About</Link>           
+            {/* Logo / Brand */}
+            <div className="text-2xl font-bold">
+              <Link to="/"><img src={logo} alt=""/></Link>
+            </div>
+
+            {/* Desktop Navigation Links */}
+            <div className="hidden md:flex ml-auto space-x-6">
+              <Link to="/" className="maintext">Home</Link>
+              <Link to="/signin" className="maintext">Project Lookup</Link>
+              <Link className="maintext">Contact</Link>
+            </div>
+
+               
+
+            {/* Mobile Menu Icon */}
+            <div className="md:hidden flex items-center">
+              <button onClick={toggleMobileMenu}><CgMenuRound className='iconmenu w-auto h-12'/></button>
+            </div>
+
           </div>
-          </div>
 
-          
+            {/* Mobile Navigation Links */}
+            {isMobileMenuOpen && (
+              <div className="md:hidden mt-4 bg-gray-200 text-white rounded-lg p-4 space-y-4">
+                <Link to="/" className="block maintext">Home</Link>
+                <Link to="/signin" className="block maintext">Project Lookup</Link>
+                <Link to="/" className="block maintext">Contact</Link>
+              </div>
+            )}
 
-        </div>
-      </div>      
+      </nav>
+
+
+
     </>
   )
 }

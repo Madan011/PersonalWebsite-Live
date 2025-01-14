@@ -1,9 +1,5 @@
-.iconmenu {
-    height: 50px;
-    width: 50px;
-    color: #008080;
-    color: #008080;
-    margin-top: 33px;
+.iconmenu {    
+    color: #008080;    
 }
 
 .iconmenu:hover{
@@ -12,6 +8,11 @@
 
 .maintext {
     color: #008080;
+    font-weight: bold;
+}
+
+.maintext:hover {
+    color: #035353;
 }
 
 .NavdropActive {
