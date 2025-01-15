@@ -10,15 +10,15 @@ const SignIn = () => {
     <>
       <NavBar />
 
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex min-h-full flex-1 flex-col justify-center pt-44">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img src={logom} alt="" className="mx-auto h-10 w-auto"/>
-          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight maintext">
+          <h2 className="mt-1 text-center text-2xl/9 font-bold tracking-tight maintext">
             Sign in to your account
           </h2>
         </div>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
           <form action="#" method="POST" className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm/6 font-medium maintext">
@@ -69,7 +69,7 @@ const SignIn = () => {
             </div>
           </form>
 
-          <p className="mt-10 text-center text-sm/6 maintext">
+          <p className="mt-6 text-center text-sm/6 maintext">
             Not a member?{' '}
             <Link className="font-semibold mainlink">
               Register Now

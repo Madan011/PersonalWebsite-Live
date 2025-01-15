@@ -28,7 +28,7 @@ const Enav = ({ showSearchBar = true }) => {
   return (
     <>
 
-      <nav className="bg-gray-300 p-4 shadow-md">
+      <nav className="bg-gray-300 p-4 shadow-md fixed top-0 left-0 w-full z-50">
         <div className="flex items-center justify-between max-w-screen-xl mx-auto">
          
           {/* Logo / Brand */}

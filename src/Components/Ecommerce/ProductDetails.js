@@ -23,20 +23,20 @@ const ProductDetails = () => {
         <Enav showSearchBar={false} />
 
         {/* Product Details Section */}
-        <section className="bg-white rounded-lg shadow-md border border-gray-300 p-6">
+        <section className="bg-white rounded-lg shadow-md border border-gray-300 p-6 pt-28">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Product Image */}
             <div className="flex justify-center items-center">
                 <img
-                src={product.imageUrl}
-                alt={product.name}
+                src={product.image}
+                alt={product.title}
                 className="rounded-lg w-full max-w-xs object-cover"
                 />
             </div>
 
         {/* Product Information */}
             <div>
-                <h2 className="text-2xl font-bold text-gray-800">{product.name}</h2>
+                <h2 className="text-2xl font-bold text-gray-800">{product.title}</h2>
                 <p className="text-xl text-teal-700 font-semibold mt-2">${product.price}</p>
                 <p className="text-gray-600 mt-4">{product.description}</p>
 
@@ -61,6 +61,13 @@ const ProductDetails = () => {
                     <li>Warranty: {product.warranty || "N/A"}</li>
                 </ul>
                 </div>
+
+                {/* Add to Cart Section */}
+                <div className="mt-2 text-center">
+                    <button className="px-6 py-3 bg-teal-700 text-white font-semibold rounded-lg shadow-md hover:bg-teal-800 transition duration-200">
+                    Add to Cart
+                    </button>
+                </div>
             </div>
             </div>
         </section>
@@ -72,7 +79,7 @@ const ProductDetails = () => {
             <div className="bg-gray-100 p-4 rounded-lg shadow-md">
                 <p className="text-gray-800 font-semibold">"Fantastic Product!"</p>
                 <p className="text-gray-600 mt-1">
-                "I absolutely love this {product.name}! It has exceeded all my expectations, and the quality is amazing. Highly recommend it to anyone."
+                "I absolutely love this {product.title}! It has exceeded all my expectations, and the quality is amazing. Highly recommend it to anyone."
                 </p>
                 <p className="text-sm text-gray-500 mt-2">- Jane D.</p>
             </div>
@@ -85,14 +92,6 @@ const ProductDetails = () => {
             </div>
             </div>
         </section>
-
-        {/* Add to Cart Section */}
-        <div className="mt-8 text-center">
-            <button className="px-6 py-3 bg-teal-700 text-white font-semibold rounded-lg shadow-md hover:bg-teal-800 transition duration-200">
-            Add to Cart
-            </button>
-        </div>
-
       
     </>
   )

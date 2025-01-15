@@ -9,3 +9,13 @@ node_modules/
 
 # Build files
 build/
+dist/
+
+# OS and IDE files
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Test coverage
+coverage/
