@@ -6,6 +6,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Mainpage from './Components/Mainpage';
 import SignIn from './Components/SignIn';
 import Store from './Components/Ecommerce/Store'
+import ProductDetails from './Components/Ecommerce/ProductDetails';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
   {
     path: '/store',
     element: <Store />
-  }
+  },
+  {
+    path: '/productDetails',
+    element: <ProductDetails />
+  },
 
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
