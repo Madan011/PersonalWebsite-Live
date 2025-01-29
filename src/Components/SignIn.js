@@ -13,7 +13,6 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const [users, setUsers] = useState([]);
   const [showUsers, setShowUsers] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
 
