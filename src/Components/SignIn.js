@@ -34,8 +34,7 @@ const SignIn = () => {
     setError('');
 
     try {
-      const cred = await fetchUsers();
-      setUsers(cred);
+      const cred = await fetchUsers();      
       if (cred.length > 0) {
         setSelectedUser(cred[Math.floor(Math.random() * cred.length)]); // Store a single random user
       }
