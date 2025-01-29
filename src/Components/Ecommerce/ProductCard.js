@@ -18,11 +18,14 @@ const ProductCard = ({ product }) => {
                 <p className="text-xs text-gray-600 line-clamp-2">{product.description}</p>
               
              <div className="flex items-center justify-between mt-3">
-                <span className="text-lg font-bold text-red-800">${product.price}</span>
-                <button className="px-3 py-1 mainbutton text-white text-sm font-semibold rounded transition duration-200">
-                Add to Cart
-                </button>
+                <span className="text-lg font-bold text-red-800">${product.price}</span>                
              </div>
+            <div className="flex justify-end items-end">
+            <button className="px-3 py-1 mt-2 mainbutton text-white text-sm font-semibold rounded transition duration-200">
+                Add to Cart
+            </button>
+            </div>
+
             </div>
         </div>
       
