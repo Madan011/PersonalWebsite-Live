@@ -22,9 +22,18 @@ const SignIn = () => {
 
     try {
       const data = await authenticateUser(email, password); // Make API call
-      localStorage.setItem('authToken', data.token); // Save the token to localStorage
-      navigate('/store'); // Redirect to the store page
-    } catch (error) {
+
+      if (data && data.token) {
+        localStorage.setItem('authToken', data.token); // Save the token to localStorage
+        console.log('Token stored in localStorage:', localStorage.getItem('authToken')); // Log the stored token
+        navigate('/store'); // Redirect to the store page
+        // window.location.href = '/store';
+
+      } else {
+        setError('Request time out !!');
+      }
+
+      } catch (error) {
       setError('Invalid email or password'); // Show error message
     }
   };
@@ -47,10 +56,10 @@ const SignIn = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar />    
 
-        <div className="pt-40 flex flex-col md:flex-row justify-center items-center min-h-screen bg-gray-50 px-4">
-        
+        <div className="pt-24 flex flex-col md:flex-row justify-center items-center min-h-screen bg-gray-50 px-4">
+          
         {/* Sign-In Form */}
         <div className="w-full md:w-3/4 max-w-md p-6 bg-white rounded-lg shadow-md">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">

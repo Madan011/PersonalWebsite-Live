@@ -5,13 +5,24 @@ import {IoMdLogOut} from 'react-icons/io'
 import {PiShoppingCartBold} from 'react-icons/pi'
 import { LiaSearchSolid } from "react-icons/lia"
 import {CgMenuRound} from 'react-icons/cg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Enav = ({ showSearchBar = true }) => {
 
  
   
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Remove the authentication token from localStorage
+    localStorage.removeItem('authToken');
+    // Optionally clear any other user-related data
+    // localStorage.removeItem('userInfo');
+
+    // Redirect the user to the SignIn page
+    navigate('/signin');
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -62,9 +73,7 @@ const Enav = ({ showSearchBar = true }) => {
             <Link className="text-teal-700 hover:text-teal-500">
               <PiShoppingCartBold className="iconmenu w-auto h-12" />
             </Link>
-            <Link to="/signin" className="text-teal-700 hover:text-teal-500">
-              <IoMdLogOut className="iconmenu w-auto h-12" />
-            </Link>
+            <button onClick={handleLogout}><IoMdLogOut className="iconmenu w-auto h-12" /></button>            
           </div>
           
 
@@ -102,7 +111,7 @@ const Enav = ({ showSearchBar = true }) => {
         {isMobileMenuOpen && (
                     <div className="md:hidden mt-4 bg-gray-200 text-white rounded-lg p-4 space-y-4">
                       <Link className="block maintext">Cart</Link>
-                      <Link to="/signin" className="block maintext">Log Out</Link>
+                      <button onClick={handleLogout} className="block maintext">Log Out</button>
                     </div>
                   )}
       </nav>     

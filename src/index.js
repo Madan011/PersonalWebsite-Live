@@ -7,6 +7,7 @@ import Mainpage from './Components/Mainpage';
 import SignIn from './Components/SignIn';
 import Store from './Components/Ecommerce/Store'
 import ProductDetails from './Components/Ecommerce/ProductDetails';
+import AuthGuard from './Components/AuthGuard';
 
 const router = createBrowserRouter([
   {
@@ -15,11 +16,13 @@ const router = createBrowserRouter([
   },
   {
     path: '/signin',
-    element: <SignIn />
+    element: <AuthGuard requiresAuth={false}/>,
+    children: [{ path: '/signin', element: <SignIn /> }]
   },
   {
     path: '/store',
-    element: <Store />
+    element: <AuthGuard requiresAuth={true}/>,
+    children: [{ path: '/store', element: <Store /> }]
   },
   {
     path: '/productDetails',

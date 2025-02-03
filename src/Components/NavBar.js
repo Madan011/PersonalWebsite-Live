@@ -22,7 +22,7 @@ const NavBar = () => {
 
             {/* Logo / Brand */}
             <div className="text-2xl font-bold">
-              <Link to="/"><img src={logo} alt=""/></Link>
+              <Link to="/"><img src={logo} alt="" className="h-16 w-auto"/></Link>
             </div>
 
             {/* Desktop Navigation Links */}
