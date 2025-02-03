@@ -27,7 +27,6 @@ const SignIn = () => {
         localStorage.setItem('authToken', data.token); // Save the token to localStorage
         console.log('Token stored in localStorage:', localStorage.getItem('authToken')); // Log the stored token
         navigate('/store'); // Redirect to the store page
-        // window.location.href = '/store';
 
       } else {
         setError('Request time out !!');
@@ -71,7 +70,6 @@ const SignIn = () => {
 
           <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
             <form onSubmit={handleSignIn} className="space-y-6">
-              {error && <p className="text-red-500">{error}</p>}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium maintext">
                   Email address
@@ -123,6 +121,8 @@ const SignIn = () => {
               </div>
             </form>
 
+            
+            {error && <p className="text-red-500">{error}</p>}
             <p className="mt-6 text-center text-sm maintext">
               Not a member?{' '}
               <Link className="font-semibold mainlink">
