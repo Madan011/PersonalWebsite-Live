@@ -28,7 +28,7 @@ const NavBar = () => {
             {/* Desktop Navigation Links */}
             <div className="hidden md:flex ml-auto space-x-6">
               <Link to="/" className="maintext">Home</Link>
-              <Link to="/signin" className="maintext">Project Lookup</Link>
+              <Link to="/projectlookup" className="maintext">Project Lookup</Link>
               <Link className="maintext">Contact</Link>
             </div>
 
@@ -45,7 +45,7 @@ const NavBar = () => {
             {isMobileMenuOpen && (
               <div className="md:hidden mt-4 bg-gray-200 text-white rounded-lg p-4 space-y-4">
                 <Link to="/" className="block maintext">Home</Link>
-                <Link to="/signin" className="block maintext">Project Lookup</Link>
+                <Link to="/projectlookup" className="block maintext">Project Lookup</Link>
                 <Link to="/" className="block maintext">Contact</Link>
               </div>
             )}

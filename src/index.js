@@ -8,11 +8,16 @@ import SignIn from './Components/SignIn';
 import Store from './Components/Ecommerce/Store'
 import ProductDetails from './Components/Ecommerce/ProductDetails';
 import AuthGuard from './Components/AuthGuard';
+import ProjectLookup from './Components/ProjectLookup';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Mainpage/>
+  },
+  {
+    path: '/projectlookup',
+    element: <ProjectLookup/>
   },
   {
     path: '/signin',

@@ -4,6 +4,7 @@ import './CSS/MainTheme.css'
 import NavBar from './NavBar'
 import { Link, useNavigate } from 'react-router-dom'
 import { authenticateUser, fetchUsers } from './Ecommerce/Eapi'
+import Footer from './Footer'
 
 
 const SignIn = () => {
@@ -55,9 +56,11 @@ const SignIn = () => {
 
   return (
     <>
+
+      <div className="flex flex-col min-h-screen">
       <NavBar />    
 
-        <div className="pt-24 flex flex-col md:flex-row justify-center items-center min-h-screen bg-gray-50 px-4">
+        <div className="pt-24 felx-grow flex flex-col md:flex-row justify-center items-center min-h-screen bg-gray-50 px-4">
           
         {/* Sign-In Form */}
         <div className="w-full md:w-3/4 max-w-md p-6 bg-white rounded-lg shadow-md">
@@ -151,6 +154,8 @@ const SignIn = () => {
         </div>
 
       </div>
+    <Footer/>
+    </div>
 
 
     </>
